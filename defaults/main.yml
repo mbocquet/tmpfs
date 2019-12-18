@@ -1,0 +1,21 @@
+---
+# defaults file for tmpfs
+
+# these are examples entries which should be placed in inventory files (group
+# or host variables)
+# FS mount points which should be tmpfs.
+# tmpfs_fs:
+#   - mountpoint: '/tmp'
+#     options:
+#       - 'noatime'
+#       - 'nodev'
+#       - 'noexec'
+#       - 'nosuid'
+#   - mountpoint: '/var/tmp'
+#     options:
+#       - 'exec'
+#       - 'noatime'
+#       - 'nodev'
+#       - 'nosuid'
+#       - 'size=128M'
+...

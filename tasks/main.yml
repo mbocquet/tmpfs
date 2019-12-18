@@ -1,0 +1,31 @@
+---
+# tasks file for tmpfs
+- name: mount
+  mount:
+    path: '{{ item.mountpoint }}'
+    src: tmpfs
+    fstype: tmpfs
+    state: mounted
+    opts: "{{ item.options | join (',') }}"
+    backup: yes
+  # We can't use a handler with parameters so we register the mount variable
+  # and will remount all fs with right options if necessary in the next play
+  register: mount
+  loop: "{{ tmpfs_fs }}"
+  when:
+    - ansible_virtualization_type != "lxc"
+  tags:
+    - tmpfs
+    - fstab
+    - mount
+
+- name: remount
+  command: "mount -o remount,{{ item.options | join (',') }} {{ item.mountpoint }}"
+  args:
+    warn: false
+  when: mount.changed
+  loop: "{{ tmpfs_fs }}"
+  tags:
+    - tmpfs
+    - remount
+...
