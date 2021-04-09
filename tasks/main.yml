@@ -7,7 +7,7 @@
     fstype: tmpfs
     state: mounted
     opts: "{{ item.options | join (',') }}"
-    backup: yes
+    backup: true
   # We can't use a handler with parameters so we register the mount variable
   # and will remount all fs with right options if necessary in the next play
   register: mount
