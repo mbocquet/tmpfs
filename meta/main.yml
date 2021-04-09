@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Mathias BOCQUET
   description: Ansible role to configure tmpfs filesystems.
@@ -10,17 +11,13 @@ galaxy_info:
   min_ansible_version: 1.2
 
   platforms:
-  - name: Debian
-    versions:
-    #- all
-    - buster
-    #- etch
-    - jessie
-    #- lenny
-    - sid
-    #- squeeze
-    - stretch
-    #- wheezy
+    - name: Debian
+      versions:
+        - jessie
+        - buster
+        - bullseye
+        - sid
+        - stretch
 
   galaxy_tags:
     - tmp
