@@ -1,6 +1,6 @@
 'tmpfs'. Ansible role to configure tmpfs filesystems.
 
-Copyright © 2018-2019 Mathias Bocquet (mbocquet@sekoya.org)
+Copyright © 2018-2021 Mathias Bocquet (mbocquet@sekoya.org)
 
 This file is part of 'tmpfs' Ansible role.
 
