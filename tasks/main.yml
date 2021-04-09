@@ -12,8 +12,6 @@
   # and will remount all fs with right options if necessary in the next play
   register: mount
   loop: "{{ tmpfs_fs }}"
-  when:
-    - ansible_virtualization_type != "lxc"
   tags:
     - tmpfs
     - fstab
