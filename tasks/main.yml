@@ -18,7 +18,8 @@
     - mount
 
 - name: remount
-  command: "mount -o remount,{{ item.options | join (',') }} {{ item.mountpoint }}"
+  command:
+    "mount -o remount,{{ item.options | join (',') }} {{ item.mountpoint }}"
   args:
     warn: false
   when: mount.changed
@@ -26,4 +27,3 @@
   tags:
     - tmpfs
     - remount
-...
