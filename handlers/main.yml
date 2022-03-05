@@ -4,7 +4,9 @@
   mount:
     path: "{{ item }}"
     state: remounted
-  loop: "{{ mounts.results | selectattr('changed', 'equalto', true) | map(attribute='item') | map(attribute='mountpoint') | list }}"
+  loop:
+    "{{ mounts.results | selectattr('changed', 'equalto', true) |
+    map(attribute='item') | map(attribute='mountpoint') | list }}"
   tags:
     - tmpfs
     - remount
