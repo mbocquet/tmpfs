@@ -1,12 +1,12 @@
 ---
 # tasks file for tmpfs
 - name: mount
-  mount:
+  ansible.posix.mount:
     path: "{{ item.mountpoint }}"
     src: tmpfs
     fstype: tmpfs
     state: mounted
-    opts: "{{ item.options | join (',') }}"
+    opts: "{{ item.options | join(',') }}"
     backup: true
   register: mounts
   notify:
