@@ -8,16 +8,12 @@ galaxy_info:
 
   license: GPLv3
 
-  min_ansible_version: '1.2'
+  min_ansible_version: "2.4"
 
   platforms:
     - name: Debian
       versions:
-        - jessie
-        - buster
-        - bullseye
-        - sid
-        - stretch
+        - all
 
   galaxy_tags:
     - tmp
