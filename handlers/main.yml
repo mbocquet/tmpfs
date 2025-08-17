@@ -1,6 +1,6 @@
 ---
 # handlers file for tmpfs
-- name: remount
+- name: Remount
   ansible.posix.mount:
     path: "{{ item }}"
     state: remounted

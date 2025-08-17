@@ -1,6 +1,6 @@
 ---
 # tasks file for tmpfs
-- name: mount
+- name: Mount
   ansible.posix.mount:
     path: "{{ item.mountpoint }}"
     src: tmpfs
