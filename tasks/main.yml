@@ -10,7 +10,7 @@
     backup: true
   register: mounts
   notify:
-    - remount
+    - Remount
   loop: "{{ tmpfs_fs }}"
   tags:
     - tmpfs
